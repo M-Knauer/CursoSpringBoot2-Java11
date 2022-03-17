@@ -121,4 +121,12 @@ public class Order implements Serializable {
 		return Objects.equals(id, other.id);
 	}
 	
+	public Double getTotal() {
+		Double sum = 0.0;
+		for (OrderItem o : items) {
+			sum += o.getSubtotal();
+		}
+		return sum;
+	}
+	
 }
